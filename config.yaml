@@ -1,0 +1,58 @@
+content_extraction:
+  max_content_length: 8000
+  strategy: jina
+  timeout: 30
+keywords:
+- Curriculum and Instruction
+- Educational Technology
+- Teacher Education
+- tenure-track
+- Assistant Professor
+- Lecturer
+- Literacy & Language Culture
+- Chinese Teaching
+- AI Instructional technology
+last_miniflux_fetch: '2025-09-22T05:00:00Z'
+llm:
+  max_tokens: 1000
+  model: llama3.1:8b
+  provider: ollama
+  temperature: 0.3
+recruitment_filters:
+  citizenship_requirement: open to international students
+  exclude_visa_sponsorship: false
+  required_degree: PhD
+rss_feeds:
+- category: academic
+  name: Chronicle of Higher Education
+  url: https://jobs.chronicle.com/jobsrss/?PositionType=26&EmploymentType=189&countrycode=US
+- category: academic
+  name: Curriculum and Instruction
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=63
+- category: academic
+  name: Reading and Literacy
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=166
+- category: academic
+  name: Teacher Education
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=184
+- category: academic
+  name: Teacher Education - Elementary
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=67
+- category: academic
+  name: Teacher Education - Middle School
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=180
+- category: academic
+  name: Teacher Education - Secondary Education
+  url: https://www.higheredjobs.com/rss/categoryFeed.cfm?catID=71
+rss_mode: miniflux
+scheduler:
+  digest_time: 08:00
+  fetch_interval_hours: 24
+  timezone: UTC
+ui:
+  enable_email_digest: true
+  items_per_page: 20
+  mode: streamlit
+vector_store:
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  type: faiss
