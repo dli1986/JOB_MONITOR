@@ -8,6 +8,7 @@ Getting University job positions updated daily through Miniflux API, and leverag
 2. If testing on Windwos and use WSL, please make sure enable Ubuntu, which was in Preferences-->WSL-->Integrations, this was based on my Rancher Desktop.
 3. Running python main.py setup firstly to setup the database.
 4. Miniflux runs on localhost:8080.
+5. docker-compose up -d to start miniflux and postgres, because docker daemon was pulled by Rancher Desktop, so should run Rancher Desktop firstly.
 
 # TODO LIST
 1. Currently only use jina.ai, should compare it with jina ReaderLM and Firecrawl as agent, of course different methods have pros and cons.
