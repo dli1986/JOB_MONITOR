@@ -227,6 +227,11 @@ class EmailDigest:
             # token.json is gmail_credentials.json
             creds_path = config_loader.get_env('GMAIL_CREDENTIALS_PATH', 'token.json')
             creds = Credentials.from_authorized_user_file(creds_path)
+            if creds.expiry and creds.refresh_token:
+                print("Refreshing Gmail API token")
+                creds.refresh(Request())
+                with open('token.json', 'w') as token:
+                    token.write(creds.to_json())
             
             service = build('gmail', 'v1', credentials=creds)
             
@@ -256,4 +261,5 @@ email_digest = EmailDigest()
 
 def send_daily_digest():
     """Function called by scheduler"""
+
     email_digest.send_daily_digest()
